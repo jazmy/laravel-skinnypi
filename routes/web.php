@@ -16,6 +16,7 @@
  */
 Route::get('/', 'FitBitController@getIndex');
 
+
 /**
  * This is the route that FitBit will post to when there is a new notification
  */
@@ -41,3 +42,7 @@ Route::get('/post-weight', 'FitBitController@getPostWeight');
 Route::get('/callback', 'FitBitController@getCallback');
 
 Route::get('/fitbitfileupdate', 'FitBitController@fitbitfileupdate');
+
+Route::get('/mqttsubscribe', 'FitBitController@mqttSubscribe');
+
+Route::get('/mqttpublish', 'FitBitController@mqttPublish');
