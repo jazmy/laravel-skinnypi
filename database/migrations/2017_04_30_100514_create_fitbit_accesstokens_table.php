@@ -16,9 +16,9 @@ class CreateFitbitAccesstokensTable extends Migration
         Schema::create('fitbit_accesstokens', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('access_token');
-            $table->string('refresh_token');
-            $table->string('resource_owner_id');
+            $table->text('access_token');
+            $table->text('refresh_token');
+            $table->text('resource_owner_id');
             $table->integer('expires');
 
             $table->timestamps();

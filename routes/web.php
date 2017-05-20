@@ -46,3 +46,7 @@ Route::get('/fitbitfileupdate', 'FitBitController@fitbitfileupdate');
 Route::get('/mqttsubscribe', 'FitBitController@mqttSubscribe');
 
 Route::get('/mqttpublish', 'FitBitController@mqttPublish');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
