@@ -18,6 +18,8 @@ class CreateFitbitDataTable extends Migration
 
             $table->text('data');
 
+            $table->boolean('processed')->default(0);
+
             $table->timestamps();
         });
     }

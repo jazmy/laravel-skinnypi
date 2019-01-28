@@ -59,6 +59,18 @@
                                 </a>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-lg-8 col-lg-offset-4">
+                                <hr />
+                                <a href="{{ route('social.redirect', ['facebook']) }}" class="btn btn-primary">
+                                    <i class="fa fa-facebook-official fa-2x"></i> Login With Facebook
+                                </a> &nbsp; 
+                                <a href="{{ route('social.redirect', ['google']) }}" class="btn btn-danger">
+                                    <i class="fa fa-google-plus fa-2x"></i> Login With Google
+                                </a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -11,7 +11,22 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,600' rel='stylesheet' type='text/css'>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('fa/css/font-awesome.min.css') }}" rel="stylesheet">
+
+    <style type="text/css">
+        .pagination {
+            margin: 8px 0;
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script>
+        window.Laravel = {!! json_encode([
+            'csrfToken' => csrf_token(),
+        ]) !!};
+    </script>
 </head>
 <body>
     <div id="app">
@@ -71,10 +86,50 @@
             </div>
         </nav>
 
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    @if(Session::has('success'))
+                    <div class="alert alert-success alert-dismissable hidden-print">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        {!! Session::get('success') !!}
+                    </div>
+                    @endif
+                    @if(Session::has('info'))
+                    <div class="alert alert-info alert-dismissable hidden-print">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        {!! Session::get('info') !!}
+                    </div>
+                    @endif
+                    @if(Session::has('warning'))
+                    <div class="alert alert-warning alert-dismissable hidden-print">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        {!! Session::get('warning') !!}
+                    </div>
+                    @endif
+                    @if(Session::has('error'))
+                    <div class="alert alert-danger alert-dismissable hidden-print">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        {!! Session::get('error') !!}
+                    </div>
+                    @endif
+                </div>
+            </div>
+        </div>
         @yield('content')
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript">
+        jQuery('#deauthorize').click( function( e ) {
+            e.preventDefault()
+            var ref = $(this)
+
+            if ( window.confirm( 'Continue with the DeAuthorization Request?' ) ) {
+                window.location = ref.attr( 'href' )
+            }
+        })
+    </script>
 </body>
 </html>
