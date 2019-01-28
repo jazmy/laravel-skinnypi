@@ -1,13 +1,18 @@
 # SkinnyPi - Weight Loss Party
 A [Laravel](https://laravel.com), [Raspberry 
 Pi](https://www.raspberrypi.org/) & [FitBit](https://www.fitbit.com) 
-Project for Weight Loss Party Mode **Demo:** Coming Soon 
-**Screenshot:** Coming Soon I thought it would be fun to setup a 
+Project for Weight Loss Party Mode
+
+**Demo:** Coming Soon 
+**Screenshot:** Coming Soon 
+
+I thought it would be fun to setup a 
 Raspberry Pi so that every time I lost weight, it would flash lights 
 and play music. I referred to this as “Party mode” or “Happy Dance.” It 
 would be positive reinforcement and a fun way to start my morning. I 
 had just completed an “Internet of Things” MIT course in Grad School so 
 I had a basic understanding of communication protocols.
+
 ## Requirements
 1.  A Fitbit Compatible Scale - Any scale that allows you to sync your 
 weight wirelessly to the fitbit site.
@@ -87,8 +92,11 @@ to type: sudo /etc/rc.local )*
 ### 1.2.3 Install Mosquitto
 There are several applications that can be used to send and receive 
 through MQTT, but the simplest on the Raspberry Pi is probably 
-Mosquitto. We will install this on the Raspberry Pi first: ```unix sudo 
-apt-get install -y mosquitto mosquitto-clients ```
+Mosquitto. We will install this on the Raspberry Pi first: 
+```bash
+sudo 
+apt-get install -y mosquitto mosquitto-clients 
+```
 ### 1.2.4 Install Paho MQTT
 In order to allow your Pi to subscribe to your MQTT channel and listen 
 for messages, you need to install Paho-mqtt. Tutorial: 
@@ -97,7 +105,10 @@ for messages, you need to install Paho-mqtt. Tutorial:
 > coe it will look for python3 version. If you run your code in the 
 > terminal then it will default to python2.  From my experience, life 
 > is easier when you install both.
-```unix sudo pip install paho-mqtt sudo pip3 install paho-mqtt ```
+```bash 
+sudo pip install paho-mqtt 
+sudo pip3 install paho-mqtt 
+```
 ### 1.2.5 Install Blinkt Scripts
 Blinkt are eight super-bright RGB LED lights that you can add to your 
 raspberry pi and control from python scripts. Each pixel on Blinkt! is 
@@ -110,8 +121,12 @@ Blinkt Python Scripts for SkinnyPi:
 Blinkt Python Code Examples:
 [https://github.com/pimoroni/blinkt/tree/master/examples](https://github.com/pimoroni/blinkt/tree/master/examples) 
 
-Create a folder “skinnypi” /home/pi/skinnypi/skinnypi.py Place your 
-audio files in wav format in that folder too.
+Create a folder “skinnypi” 
+/home/pi/skinnypi/skinnypi.py 
+
+Place your audio files in wav format in that folder.
+It's best to name your audio files 1.wav, 2.wav, 3.wav, etc...
+
 > Make sure your audio is set to “analog” If you have your raspberry pi 
 > connected to a monitor via HDMI then it will default to playing the 
 > audio on HDMI. To make that change, right click on the audio icon in 
@@ -134,9 +149,7 @@ connect to the network before you run your script. This will create a
 log file if there are problems. 
 
 ```bash 
-sudo bash -c '(sleep 
-10;/usr/bin/python3 /home/pi/skinnypi/skinnypi.py > 
-/home/pi/skinnypi/skinnypi.log 2>&1)' & 
+sudo bash -c '(sleep 10;/usr/bin/python3 /home/pi/skinnypi/skinnypi.py > /home/pi/skinnypi/skinnypi.log 2>&1)' & 
 ```
 
 # Part 2 - The Cloud Server
@@ -167,6 +180,7 @@ composer update
 automatically register itself using [Laravel's](https://laravel.com) 
 package discovery feature for versions 5.6 and above. This means you do 
 not need to update your config/app.php file.*
+
 #### Step Three:
 We need to add the additional database tables so run the following 
 command
@@ -252,6 +266,7 @@ weight that has changed.
       
 - The weight data will then be written to a file inside the 
 storage/app/weight_logs folder.
+
 # Part 3 - MQTT Server
 MQTT is a way to push and subscribe to messages and works well on 
 Internet of Things (iOT) devices like a Raspberry pi. You setup the Pi 
