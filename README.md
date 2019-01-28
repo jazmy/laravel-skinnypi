@@ -103,23 +103,42 @@ Blinkt are eight super-bright RGB LED lights that you can add to your
 raspberry pi and control from python scripts. Each pixel on Blinkt! is 
 individually controllable and dimmable allowing you to create 
 gradients, pulsing effects, or just flash them on and off like crazy. 
-Here is blinkt python code examples: 
+
+Blinkt Python Scripts for SkinnyPi:
+[https://github.com/jazmy/raspberrypi-skinnypi](https://github.com/jazmy/raspberrypi-skinnypi)
+
+Blinkt Python Code Examples:
 [https://github.com/pimoroni/blinkt/tree/master/examples](https://github.com/pimoroni/blinkt/tree/master/examples) 
+
 Create a folder “skinnypi” /home/pi/skinnypi/skinnypi.py Place your 
 audio files in wav format in that folder too.
 > Make sure your audio is set to “analog” If you have your raspberry pi 
 > connected to a monitor via HDMI then it will default to playing the 
 > audio on HDMI. To make that change, right click on the audio icon in 
 > the upper right hand corner of the raspberry pi OS.
-Execute the file ```unix sudo python skinnypi/skinnypi.py ```
+
+Execute the file 
+```bash 
+sudo python skinnypi/skinnypi.py 
+```
 ### 1.2.6 Setup your Blinkt Scripts to Automatically Run on Boot
 [https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup#method-1-rclocal](https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup#method-1-rclocal) 
-```unix sudo nano /etc/rc.local ``` This is tricky but you need to 
+
+```bash 
+sudo nano /etc/rc.local 
+``` 
+
+This is tricky but you need to 
 ensure that you wait 10 seconds to give your pi enough time to boot and 
 connect to the network before you run your script. This will create a 
-log file if there are problems. ```unix sudo bash -c '(sleep 
+log file if there are problems. 
+
+```bash 
+sudo bash -c '(sleep 
 10;/usr/bin/python3 /home/pi/skinnypi/skinnypi.py > 
-/home/pi/skinnypi/skinnypi.log 2>&1)' & ```
+/home/pi/skinnypi/skinnypi.log 2>&1)' & 
+```
+
 # Part 2 - The Cloud Server
 If you are looking for a managed web host, with easy laravel site 
 creation, then I highly recommend Cloudways. Cloudways will setup a 
@@ -138,20 +157,30 @@ This project includes Fitbit Provider for OAuth 2.0 Client
 ### Installation Instructions
 This repository is an entire Laravel site and not just a package. It 
 takes a couple steps to install but I will try to make it as simple as 
-possible. ```bash composer update ``` *Note: The package will 
+possible. 
+
+```bash 
+composer update 
+``` 
+
+*Note: The package will 
 automatically register itself using [Laravel's](https://laravel.com) 
 package discovery feature for versions 5.6 and above. This means you do 
 not need to update your config/app.php file.*
 #### Step Three:
 We need to add the additional database tables so run the following 
-command ```bash php artisan migrate ```
+command
+
+```
+bash php artisan migrate 
+```
+
 ## 2.2 Setup a Fitbit App (client id & client secret)
-Fitbit API Documentation: [https://dev.fitbit.com/
-  
-](https://dev.fitbit.com/) Creating a Laravel fitbit application is 
-really tricky but here are the basic steps for how it works: - The user 
-authorizes the application - Fitbit returns the user back to the 
-callback url with the authorization token
+Fitbit API Documentation: [https://dev.fitbit.com/](https://dev.fitbit.com/) 
+Creating a Laravel fitbit application is 
+really tricky but here are the basic steps for how it works: 
+- The user authorizes the application 
+- Fitbit returns the user back to the callback url with the authorization token
     
 Example Callback URL: 
 [https://your.domain.com/authorize](https://your.domain.com/authorize) 
@@ -161,8 +190,7 @@ so that we will be able to make subsequent requests on behalf of the
 user later.
   
 - We use the id of the authorization token that was stored to create a 
-subscription for the user on our subscriber endpoint.
-    That means every time a change happens, fitbit will fire your 
+subscription for the user on our subscriber endpoint. That means every time a change happens, fitbit will fire your 
 callback page.
     
 Example endpoint subscriber URL: 
@@ -232,8 +260,11 @@ to that MQTT channel then MQTT will automatically push it to any device
 subscribed. MQTT Introduction: 
 [http://www.steves-internet-guide.com/mqtt/](http://www.steves-internet-guide.com/mqtt/)
   
-If the user has lost weight it should send this json to MQTT: ```json 
+If the user has lost weight it should send this json to MQTT: 
+```json 
 $message = { "color": "1", "style": "1", "seconds": "10", "audio": "1"} 
-``` If the user has not lost weight it should send this json to MQTT: 
+``` 
+If the user has not lost weight it should send this json to MQTT: 
 ```json
 $message = { "color": "2", "style": "2", "seconds": "10", "audio": "2"}
+``` 
