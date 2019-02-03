@@ -170,6 +170,9 @@ If you are looking for a managed web host, with easy laravel site
 creation, then I highly recommend [Cloudways](https://www.cloudways.com/en/?id=45081). Cloudways will setup a 
 laravel site and mysql database in minutes.
 ## 2.1 Laravel App
+
+![SkinnyPi Laravel App Screenshot](https://jazmy.com/wp-content/uploads/skinnypi_laravel_screenshot.jpg)
+
 ### Requirements
 - Laravel 5.7
     
