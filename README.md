@@ -3,8 +3,9 @@ A [Laravel](https://laravel.com), [Raspberry
 Pi](https://www.raspberrypi.org/) & [FitBit](https://www.fitbit.com) 
 Project for Weight Loss Party Mode
 
-**Demo:** Coming Soon 
-**Screenshot:** Coming Soon 
+View my website: https://jazmy.com/skinnypi/
+
+**[Video Demo](https://youtu.be/MJ7T2EUNAlY)** 
 
 I thought it would be fun to setup a 
 Raspberry Pi so that every time I lost weight, it would flash lights 
@@ -14,15 +15,19 @@ had just completed an “Internet of Things” MIT course in Grad School so
 I had a basic understanding of communication protocols.
 
 ## Requirements
-1.  A Fitbit Compatible Scale - Any scale that allows you to sync your 
-weight wirelessly to the fitbit site.
-    
+1.  A Fitbit Compatible Scale 
+Any scale that allows you to sync your weight wirelessly to the Fitbit site. 
+I am using the [Fitbit Aria](https://amzn.to/2WDCBHl)
+
 2.  A Raspberry Pi (with wifi)
-    
-3.  Hosted Cloud Server (Cloudways)
-    
-4.  Hosted MQTT Server (cloudMQTT) The json version of the form can be 
-used to render the form for users to fill.
+I am using the [Raspberry Pi 3 Model B](https://amzn.to/2DP3pg7)
+
+3.  Hosted Cloud Server 
+I am using [Cloudways](https://www.cloudways.com/en/?id=45081) which is easy for Laravel
+
+4.  Hosted MQTT Server 
+I am using the free version of [CloudMQTT](https://www.cloudmqtt.com/)
+
 ## How it Works *(simplified version)*:
 1.  You step on the Fitbit Aria Scale and it syncs over wifi to the 
 fitbit server
@@ -39,6 +44,10 @@ was higher or lower than the previous weight
 the message and triggers a python script.
     
 6.  The python script plays music and flashes lights.
+
+
+![SkinnyPi Diagram](https://jazmy.com/wp-content/uploads/skinnypi_diagram.jpg)
+
 # Part 1 - The Raspberry Pi
 **Requirements**
  - Raspberry Pi - link to Amazon
