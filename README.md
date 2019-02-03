@@ -1,4 +1,4 @@
-![](https://jazmy.com/wp-content/uploads/github_header-1.jpg)
+![](https://jazmy.com/wp-content/uploads/github_header.jpg)
 # SkinnyPi - Weight Loss Party
 A [Laravel](https://laravel.com), [Raspberry 
 Pi](https://www.raspberrypi.org/) & [FitBit](https://www.fitbit.com) 
