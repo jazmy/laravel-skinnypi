@@ -4,9 +4,11 @@ A [Laravel](https://laravel.com), [Raspberry
 Pi](https://www.raspberrypi.org/) & [FitBit](https://www.fitbit.com) 
 Project for Weight Loss Party Mode
 
-View my website: https://jazmy.com/skinnypi/
+View my website: [https://jazmy.com](https://jazmy.com)
 
-**[Video Demo](https://youtu.be/MJ7T2EUNAlY)** 
+**[Skinny Pi in Action - Video Demo](https://youtu.be/MJ7T2EUNAlY)** 
+
+[Demo Laravel Site](https://skinnypi.jazmy.com)
 
 I thought it would be fun to setup a 
 Raspberry Pi so that every time I lost weight, it would flash lights 
