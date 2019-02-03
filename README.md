@@ -50,11 +50,11 @@ the message and triggers a python script.
 
 # Part 1 - The Raspberry Pi
 **Requirements**
- - Raspberry Pi - link to Amazon
- - SD Card - link to Amazon
- - Blinkt Lights - link to Adafruit
- - Speakers - link to Amazon or Adafruit
- - Clear Case with cable that has a button - link to Amazon
+ - [Raspberry Pi 3 Model B](https://amzn.to/2DP3pg7)
+ - [32 GB Micro SD Card](https://amzn.to/2G7xjig)
+ - [Pimoroni Blinkt Leds](https://amzn.to/2t3lRLR)
+ - [Speakers 8 ohm 0.25W](https://amzn.to/2DeTMWT)
+ - [Clear Case for Pi 3](https://amzn.to/2DPi3Em)
 ## 1.1 Assembling Your Pi
 I'll assume if you are reading this that you know how to put together a 
 raspberry pi.
@@ -108,7 +108,8 @@ apt-get install -y mosquitto mosquitto-clients
 ```
 ### 1.2.4 Install Paho MQTT
 In order to allow your Pi to subscribe to your MQTT channel and listen 
-for messages, you need to install Paho-mqtt. Tutorial: 
+for messages, you need to install Paho-mqtt. 
+Tutorial: 
 [https://tutorials-raspberrypi.com/raspberry-pi-mqtt-broker-client-wireless-communication/](https://tutorials-raspberrypi.com/raspberry-pi-mqtt-broker-client-wireless-communication/)
 > Install both python 2 and 3 versions. If you use Thonny to test you 
 > coe it will look for python3 version. If you run your code in the 
@@ -163,7 +164,7 @@ sudo bash -c '(sleep 10;/usr/bin/python3 /home/pi/skinnypi/skinnypi.py > /home/p
 
 # Part 2 - The Cloud Server
 If you are looking for a managed web host, with easy laravel site 
-creation, then I highly recommend Cloudways. Cloudways will setup a 
+creation, then I highly recommend [Cloudways](https://www.cloudways.com/en/?id=45081). Cloudways will setup a 
 laravel site and mysql database in minutes.
 ## 2.1 Laravel App
 ### Requirements
