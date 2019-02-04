@@ -224,7 +224,7 @@ subscription for the user on our subscriber endpoint. That means every time a ch
 callback page.
     
 Example endpoint subscriber URL: 
-[https://your.domain.com](https://your.domain.com/authorize)[/callback](http://phplaravel-36874-256428.cloudwaysapps.com/callback)
+[https://your.domain.com](https://your.domain.com/authorize)[/callback]
   
 - Once the subscription is complete, the user sees a message on the 
 screen saying that their subscription has been created or that the 
@@ -232,7 +232,7 @@ subscription already exists if it already does.
       
 - When the user's weight data comes into Fitbit, fitbit will notify our 
 application by calling the subscriber url. 
-[https://your.domain.com](https://your.domain.com/authorize)[/callback](http://phplaravel-36874-256428.cloudwaysapps.com/callback)
+[https://your.domain.com](https://your.domain.com/authorize)[/callback]
       
 - Fitbit only NOTIFIES us that the user weight data has changed. It 
 does not send us the actual weight.
@@ -274,7 +274,7 @@ crashes.
 - send the requested mqtt message
       
 - Then we will run the 
-[http://phplaravel-36874-256428.cloudwaysapps.com/notification-details](http://phplaravel-36874-256428.cloudwaysapps.com/notification-details) 
+[http://your.domain.com/notification-details](http://your.domain.com/notification-detail) 
 route to go through the notifications we have saved and create a 
 request to fitbit to fetch the details of each of those notifications. 
 It is in the response that we get from fitbit that we will have the 
