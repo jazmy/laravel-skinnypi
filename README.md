@@ -189,7 +189,7 @@ takes a couple steps to install but I will try to make it as simple as
 possible. 
 
 ```bash 
-composer update 
+composer require jazmy/laravel-skinnypi 
 ``` 
 
 *Note: The package will 
