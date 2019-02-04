@@ -1,6 +1,6 @@
 {
     "name": "jazmy/laravel-skinnypi",
-    "description": "SkinnyPi",
+    "description": "SkinnyPi - A Laravel, Raspberry Pi, FitBit & MQTT Project. When you lose weight, your Raspberry Pi plays music and flashes light. ",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
